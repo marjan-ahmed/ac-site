@@ -37,7 +37,7 @@ function Home() {
               </p>
 
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex gap-3">
                 <a
                   href="#services"
                   className="inline-flex items-center justify-center rounded-sm bg-[#46A3B2] px-5 py-3 text-md text-white font-semibold shadow-lg hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2"

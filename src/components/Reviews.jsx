@@ -62,10 +62,11 @@ function Reviews() {
   return (
     <section id="reviews" className="py-16 bg-gradient-to-br from-gray-50 to-cyan-50 min-h-screen">
       <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-slate-900 mb-8 tracking-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl  font-extrabold text-slate-900 mb-4 relative inline-block tracking-tight">
           Customer Reviews
+            <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-[#92D9E5] to-[#4FD1C7] rounded-full"></div>
         </h2>
-        <p className="text-slate-600 mb-12 text-lg max-w-2xl mx-auto">
+        <p className="text-slate-600 mb-6 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
           See what our valued customers have to say about their experience with us
         </p>
 
@@ -146,7 +147,7 @@ function Reviews() {
                   </div>
 
                   {/* Review */}
-                  <p className="text-slate-700 italic text-lg leading-relaxed mb-6 font-medium">
+                  <p className="text-slate-700 italic text-sm sm:text-md md:text-lg leading-relaxed mb-6 font-medium">
                     "{review.review}"
                   </p>
 
@@ -168,7 +169,7 @@ function Reviews() {
                   </div>
 
                   {/* Name */}
-                  <p className="font-bold capitalize text-slate-900 text-lg">
+                  <p className="font-bold capitalize text-slate-900 text-xs sm:text-sm md:text-md">
                      {review.name}
                   </p>
                 </div>

@@ -47,7 +47,7 @@ export default function ACServicesComponent() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-gray-50 py-8 px-4">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-3xl mt-4 sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-4 relative inline-block">
+        <h1 className=" mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-4 relative inline-block">
           Our AC Services
           <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-[#92D9E5] to-[#4FD1C7] rounded-full"></div>
         </h1>
@@ -90,12 +90,12 @@ export default function ACServicesComponent() {
   <p className="text-white/90 text-base sm:text-lg md:text-xl mb-6 max-w-3xl mx-auto leading-relaxed">
     Contact us now for fast, reliable, and professional air conditioning services
   </p>
-  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+  <div className="flex justify-center">
     <a
       href="https://wa.me/+923333474568"
       target="_blank"
       rel="noopener noreferrer"
-      className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition duration-300 text-base sm:text-lg md:text-lg"
+      className="bg-[#3bad65] text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition duration-300 text-base sm:text-lg md:text-lg"
     >
       WhatsApp Us
     </a>

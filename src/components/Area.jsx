@@ -34,18 +34,29 @@ const AreasWeServe = () => {
             We proudly provide fast, reliable services across Karachi.  
             Explore our coverage below.
           </p>
-<div className="mt-5 flex justify-center h-5 items-center space-x-4 text-sm">
-        <div>Defence</div>
-        <Separator orientation="vertical" />
-        <div>Clifton</div>
-        <Separator orientation="vertical" />
-        <div>Baloch Colony</div>
-         <Separator orientation="vertical" />
-        <div>Bahadurabad</div>
-         <Separator orientation="vertical" />
-        <div>Gulshan E Iqbal</div>
-      </div>
-        </div>
+<div className="mt-5 flex flex-wrap justify-center items-center gap-3 text-sm">
+<div className="flex items-center justify-center gap-3 flex-wrap sm:flex-nowrap">
+  <div>Defence</div>
+  <Separator orientation="vertical" className="hidden sm:block h-5 w-px bg-gray-300" />
+  <Separator className="sm:hidden w-full my-2 bg-gray-300" />
+
+  <div>Clifton</div>
+  <Separator orientation="vertical" className="hidden sm:block h-5 w-px bg-gray-300" />
+  <Separator className="sm:hidden w-full my-2 bg-gray-300" />
+
+  <div>Baloch Colony</div>
+  <Separator orientation="vertical" className="hidden sm:block h-5 w-px bg-gray-300" />
+  <Separator className="sm:hidden w-full my-2 bg-gray-300" />
+
+  <div>Bahadurabad</div>
+  <Separator orientation="vertical" className="hidden sm:block h-5 w-px bg-gray-300" />
+  <Separator className="sm:hidden w-full my-2 bg-gray-300" />
+
+  <div>Gulshan E Iqbal</div>
+</div>
+
+</div>
+</div>
 
 
         {/* Layout: Map + List */}

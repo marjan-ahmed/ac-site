@@ -38,12 +38,25 @@ const Header = () => {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-6 text-gray-700 font-medium">
-          <a href="/">Home</a>
-          <a href="#services">Services</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#areas">Areas</a>
-        </nav>
+      <nav className="hidden md:flex gap-6 text-gray-700 font-medium">
+  {["Home", "Services", "Reviews", "Areas"].map((item) => (
+    <motion.a
+      key={item}
+      href={item === "Home" ? "/" : `#${item.toLowerCase()}`}
+      className="px-2 py-2 rounded-lg border border-transparent transition-all duration-200"
+      whileHover={{
+        scale: 1.05,
+        backgroundColor: "rgba(14,116,144,0.1)", // soft cyan
+        borderColor: "rgba(14,116,144,0.4)",      // soft border
+        color: "#0E7490",                         // cyan text
+      }}
+      transition={{ type: "tween", duration: 0.15 }}
+    >
+      {item}
+    </motion.a>
+  ))}
+</nav>
+
 
         {/* CTA */}
         <div className="hidden md:flex">
@@ -100,15 +113,8 @@ const Header = () => {
   </button>
 
   {/* Nav links */}
-  <nav className="flex flex-col items-center gap-2.5 text-gray-700 font-normal">
-     <a href="/" onClick={() => setMenuOpen(false)}>Home</a>
-        <Separator className="w-full bg-[#9cdae4]" />
-        <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
-        <Separator className="w-full bg-[#9cdae4]" />
-        <a href="#reviews" onClick={() => setMenuOpen(false)}>Reviews</a>
-        <Separator className="w-full bg-[#9cdae4]" />
-        <a href="#areas" onClick={() => setMenuOpen(false)}>Areas</a>
-  </nav>
+<nav className="flex flex-col items-center gap-2.5 text-gray-700 font-normal"> <a href="/" onClick={() => setMenuOpen(false)}>Home</a> <Separator className="w-full bg-[#9cdae4]" /> <a href="#services" onClick={() => setMenuOpen(false)}>Services</a> <Separator className="w-full bg-[#9cdae4]" /> <a href="#reviews" onClick={() => setMenuOpen(false)}>Reviews</a> <Separator className="w-full bg-[#9cdae4]" /> <a href="#areas" onClick={() => setMenuOpen(false)}>Areas</a> </nav>
+
 
   {/* CTA button */}
   <Button variant={'outline'} className="bg-[#51AEBC] text-white mt-6 py-2 px-4 text-sm">

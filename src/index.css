@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+body {
+  scroll-behavior: smooth;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -115,8 +119,7 @@ p {
 }
  section {
     scroll-margin-top: 50px; /* match your header height */
-
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
  }
 
 h1,h2,h3 {

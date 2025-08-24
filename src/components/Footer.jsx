@@ -30,9 +30,8 @@ const Footer = () => {
       <div>
         <h3 className="text-cyan-900 font-semibold mb-3">Contact</h3>
         <ul className="space-y-2 text-sm sm:text-md">
-          <li>📍 Karachi, Pakistan</li>
-          <li>📞 <a href="tel:+923333474568" className="hover:text-[#1b5d67]">+92 3333474568</a></li>
-          <li>✉️ support@acrepair.com</li>
+          <li>Karachi, Pakistan</li>
+          <li><a href="tel:+923333474568" className="hover:text-[#1b5d67]">+92 3333474568</a></li>
         </ul>
       </div>
     </div>

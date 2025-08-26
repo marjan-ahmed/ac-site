@@ -62,7 +62,7 @@ const AreasWeServe = () => {
         {/* Layout: Map + List */}
         <div className="">
           {/* Map Box */}
-          <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 h-[450px]">
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 h-[300px] sm:h-[450px]">
             <MapContainer
               center={[24.8607, 67.0011]}
               zoom={11}

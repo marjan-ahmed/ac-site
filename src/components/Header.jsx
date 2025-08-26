@@ -10,7 +10,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50); // scroll threshold
+      setScrolled(window.scrollY > 50); // threshold
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -18,47 +18,38 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-colors duration-500 backdrop-blur-xl ${
-        scrolled ? "bg-white/95 shadow-md" : "bg-white/10"
+      className={`sticky top-0 z-50 transition-all duration-500 backdrop-blur-xl ${
+        scrolled ? "bg-white/80 shadow-md" : "bg-white/40"
       }`}
     >
-      {/* Optional decorative background shapes */}
-      {!scrolled && (
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-b from-sky-50 via-white to-white" />
-          <div className="absolute -top-12 -right-12 h-36 w-36 rounded-full bg-sky-100 blur-3xl opacity-70" />
-          <div className="absolute -bottom-12 -left-12 h-36 w-36 rounded-full bg-cyan-100 blur-3xl opacity-70" />
-        </div>
-      )}
-
       {/* Header content */}
       <div className="relative z-10 mx-auto flex justify-between items-center py-3 px-4 sm:px-6 lg:px-8 max-w-7xl">
+        {/* Logo */}
         <a href="/" className="text-2xl font-bold text-cyan-800">
           ACS
         </a>
 
         {/* Desktop Nav */}
-      <nav className="hidden md:flex gap-6 text-gray-700 font-medium">
-  {["Home", "Services", "Reviews", "Areas"].map((item) => (
-    <motion.a
-      key={item}
-      href={item === "Home" ? "/" : `#${item.toLowerCase()}`}
-      className="px-2 py-2 rounded-lg border border-transparent transition-all duration-200"
-      whileHover={{
-        scale: 1.05,
-        backgroundColor: "rgba(14,116,144,0.1)", // soft cyan
-        borderColor: "rgba(14,116,144,0.4)",      // soft border
-        color: "#0E7490",                         // cyan text
-      }}
-      transition={{ type: "tween", duration: 0.15 }}
-    >
-      {item}
-    </motion.a>
-  ))}
-</nav>
+        <nav className="hidden md:flex gap-6 text-gray-700 font-medium">
+          {["Home", "Services", "Reviews", "Areas"].map((item) => (
+            <motion.a
+              key={item}
+              href={item === "Home" ? "/" : `#${item.toLowerCase()}`}
+              className="px-2 py-2 rounded-lg border border-transparent transition-all duration-200"
+              whileHover={{
+                scale: 1.05,
+                backgroundColor: "rgba(14,116,144,0.08)", // subtle cyan hover
+                borderColor: "rgba(14,116,144,0.3)",
+                color: "#0E7490",
+              }}
+              transition={{ type: "tween", duration: 0.15 }}
+            >
+              {item}
+            </motion.a>
+          ))}
+        </nav>
 
-
-        {/* CTA */}
+        {/* CTA (Desktop) */}
         <div className="hidden md:flex">
           <Button className="bg-green-600 hover:bg-green-700 text-white py-2 px-4 text-sm">
             <a
@@ -74,7 +65,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <Button
-            className="bg-[#51AEBC]"
+            className="bg-cyan-600 hover:bg-cyan-700 text-white"
             onClick={() => setMenuOpen(true)}
           >
             <HiMenuAlt3 size={22} />
@@ -82,11 +73,11 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay with Animation */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {menuOpen && (
           <>
-            {/* Background overlay */}
+            {/* Background Overlay */}
             <motion.div
               className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
               initial={{ opacity: 0 }}
@@ -95,39 +86,48 @@ const Header = () => {
               onClick={() => setMenuOpen(false)}
             />
 
-            {/* Slide-in menu */}
-            {/* Slide-down menu from top */}
-<motion.div
-      className="fixed top-0 left-0 w-full backdrop-blur-3xl bg-cyan-50 shadow-lg z-50 p-6 flex flex-col"
-  initial={{ y: "-100%" }}      // 👈 start off-screen at the top
-  animate={{ y: 0 }}            // 👈 slide down
-  exit={{ y: "-100%" }}         // 👈 slide back up on close
-  transition={{ type: "tween", duration: 0.3 }}
->
-  {/* Close button */}
-  <button
-    className="self-end mb-6 text-gray-600"
-    onClick={() => setMenuOpen(false)}
-  >
-    <HiX size={24} />
-  </button>
+            {/* Slide-down Menu */}
+            <motion.div
+              className="fixed top-0 left-0 w-full backdrop-blur-2xl bg-white shadow-lg z-50 p-6 flex flex-col"
+              initial={{ y: "-100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+            >
+              {/* Close Button */}
+              <button
+                className="self-end mb-6 text-gray-600"
+                onClick={() => setMenuOpen(false)}
+              >
+                <HiX size={24} />
+              </button>
 
-  {/* Nav links */}
-<nav className="flex flex-col items-center gap-2.5 text-gray-700 font-normal"> <a href="/" onClick={() => setMenuOpen(false)}>Home</a> <Separator className="w-full bg-[#9cdae4]" /> <a href="#services" onClick={() => setMenuOpen(false)}>Services</a> <Separator className="w-full bg-[#9cdae4]" /> <a href="#reviews" onClick={() => setMenuOpen(false)}>Reviews</a> <Separator className="w-full bg-[#9cdae4]" /> <a href="#areas" onClick={() => setMenuOpen(false)}>Areas</a> </nav>
+              {/* Nav Links */}
+              <nav className="flex flex-col items-center gap-3 text-gray-700 font-medium">
+                {["Home", "Services", "Reviews", "Areas"].map((item) => (
+                  <React.Fragment key={item}>
+                    <a
+                      href={item === "Home" ? "/" : `#${item.toLowerCase()}`}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {item}
+                    </a>
+                    <Separator className="w-full bg-gray-200" />
+                  </React.Fragment>
+                ))}
+              </nav>
 
-
-  {/* CTA button */}
-  <Button variant={'outline'} className="bg-[#51AEBC] text-white mt-6 py-2 px-4 text-sm">
-    <a
-      href="https://wa.me/923001234567"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      WhatsApp Us
-    </a>
-  </Button>
-</motion.div>
-
+              {/* CTA Button */}
+              <Button className="bg-green-600 hover:bg-green-700 text-white mt-6 py-2 px-4 text-sm">
+                <a
+                  href="https://wa.me/923001234567"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WhatsApp Us
+                </a>
+              </Button>
+            </motion.div>
           </>
         )}
       </AnimatePresence>

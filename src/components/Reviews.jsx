@@ -60,7 +60,7 @@ function Reviews() {
   }, []);
 
   return (
-    <section id="reviews" className="py-16 bg-gradient-to-br from-gray-50 to-cyan-50 min-h-screen">
+    <section id="reviews" className="py-16 bg-gradient-to-br from-gray-50 to-cyan-50 ">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl  font-extrabold text-slate-900 mb-4 relative inline-block tracking-tight">
           Customer Reviews

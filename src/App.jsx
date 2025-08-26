@@ -40,13 +40,13 @@ function Home() {
               <div className="flex gap-3">
                 <a
                   href="#services"
-                  className="inline-flex items-center justify-center rounded-sm bg-[#46A3B2] px-5 py-3 text-md text-white font-semibold shadow-lg hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2"
+                  className="inline-flex items-center justify-center rounded-sm bg-[#46A3B2] px-5 py-3 text-md text-white font-semibold shadow-lg transition-all hover:bg-[#368e9b] focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2"
                 >
                   View Services
                 </a>
                 <a
-                  href="tel:+92XXXXXXXXXX"
-                  className="inline-flex items-center justify-center rounded-sm bg-white px-5 py-3 font-semibold text-slate-900 shadow-lg ring-1 ring-slate-200 hover:bg-slate-50"
+                  href="tel:+923333474568"
+                  className="inline-flex items-center justify-center transition-all rounded-sm bg-white px-5 py-3 font-semibold text-slate-900 shadow-lg ring-1 ring-slate-200 hover:bg-slate-50"
                 >
                   <Phone className="mr-2 h-5 w-5" /> Call Now
                 </a>
